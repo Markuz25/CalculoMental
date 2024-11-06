@@ -111,3 +111,7 @@ button:hover {
     text-align: center;
     width: 80%;
 }
+
+#submitMobileButton{
+    margin-top: 10px;
+}
