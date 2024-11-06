@@ -25,7 +25,7 @@ function toggleMobileSubmitButton() {
 
 // Función para generar una expresión aleatoria combinada
 function generateExpression() {
-    const operations = ["+", "-","*"];
+    const operations = ["+","-"];
     let expressionParts = [];
     let numCount = Math.floor(Math.random() * 4) + 2; // Genera entre 2 y 5 números
     let result = 0;
