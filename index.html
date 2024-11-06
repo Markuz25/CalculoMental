@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Cálculo Mental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>Juego de Cálculo Mental</h1>
+        <div id="scoreboard">
+            <p id="score">Puntaje: 0</p>
+            <p id="correctAnswers">Aciertos: 0</p>
+            <p id="incorrectAnswers">Errores: 0</p>
+        </div>
+        <div id="question"></div>
+        <input type="text" id="answer" placeholder="Ingresa tu respuesta" />
+        <div id="buttons">
+            <button id="startButton" onclick="startGame()">Iniciar Juego</button>
+            <button id="stopButton" onclick="stopGame()" style="display:none;">Detener Juego</button>
+        </div>
+        <div id="mobileButtons">
+            <!-- Botón que aparece solo en móvil -->
+            <button id="submitMobileButton" onclick="checkAnswer()" style="display:none;">Enviar Resultado</button>
+        </div>
+        <h2>Operaciones Realizadas</h2>
+        <div id="operationsHistory"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+

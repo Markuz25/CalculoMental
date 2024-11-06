@@ -1,0 +1,113 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+#startButton,#stopButton{
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+/* Estilo para los contadores de aciertos y errores */
+#correctAnswers,
+#incorrectAnswers {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0077b6;
+    margin-top: 10px;
+}
+
+#question {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    width: 80%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0077b6;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005f8c;
+}
+
+#score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0077b6;
+    margin-top: 15px;
+}
+
+/* styles.css */
+
+/* Estilo para la operación */
+.operation {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+#operationsHistory {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+#gameContainer {
+    text-align: center;
+    width: 80%;
+}
