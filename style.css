@@ -115,3 +115,12 @@ button:hover {
 #submitMobileButton{
     margin-top: 10px;
 }
+
+/* Colores para las respuestas */
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}

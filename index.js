@@ -25,7 +25,7 @@ function toggleMobileSubmitButton() {
 
 // Función para generar una expresión aleatoria combinada
 function generateExpression() {
-    const operations = ["+","-"];
+    const operations = ["+", "-"];
     let expressionParts = [];
     let numCount = Math.floor(Math.random() * 4) + 2; // Genera entre 2 y 5 números
     let result = 0;
@@ -76,10 +76,12 @@ function checkAnswer() {
     const timeTaken = (Date.now() - startTime) / 1000; // Convertir de milisegundos a segundos
 
     // Compara la respuesta del usuario con el resultado correcto
+    let isCorrect = false;
     if (userAnswer === correctAnswer) {
         alert(`¡Correcto! Respondiste en ${timeTaken.toFixed(2)} segundos.`);
         score++;
         correctAnswers++;
+        isCorrect = true;
     } else {
         alert(`Incorrecto. La respuesta correcta era ${correctAnswer}. Respondiste en ${timeTaken.toFixed(2)} segundos.`);
         incorrectAnswers++;
@@ -90,8 +92,14 @@ function checkAnswer() {
     document.getElementById("correctAnswers").innerText = `Aciertos: ${correctAnswers}`;
     document.getElementById("incorrectAnswers").innerText = `Errores: ${incorrectAnswers}`;
 
-    // Guarda la operación en el historial
-    operationsHistory.push({ operation: currentExpression, time: timeTaken.toFixed(2) });
+    // Guarda la operación en el historial con su estado (correcta o incorrecta)
+    operationsHistory.push({
+        operation: currentExpression,
+        result: correctAnswer,
+        userAnswer: userAnswer,
+        time: timeTaken.toFixed(2),
+        correct: isCorrect
+    });
 
     // Actualiza el historial de operaciones
     updateOperationsHistory();
@@ -110,7 +118,16 @@ function updateOperationsHistory() {
     operationsHistory.forEach(item => {
         const operationElement = document.createElement("div");
         operationElement.classList.add("operation");
-        operationElement.innerText = `${item.operation} = Respuesta en ${item.time} segundos`;
+
+        // Asigna color según si la respuesta fue correcta o incorrecta
+        if (item.correct) {
+            operationElement.classList.add("correct");
+        } else {
+            operationElement.classList.add("incorrect");
+        }
+
+        // Muestra la operación, el resultado y el tiempo de respuesta
+        operationElement.innerHTML = `${item.operation} = ${item.result} | Respuesta: ${item.userAnswer} | Tiempo: ${item.time} segundos`;
         historyContainer.appendChild(operationElement);
     });
 }
@@ -155,6 +172,7 @@ document.getElementById("answer").addEventListener("keydown", handleEnterKey);
 window.onload = function () {
     toggleMobileSubmitButton();
 };
+
 
 
 
